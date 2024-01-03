@@ -28,7 +28,7 @@ function App() {
         </h1>
       </div>
       <AddTask setTasks={setTasks} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} setTasks={setTasks} />
     </>
   );
 }

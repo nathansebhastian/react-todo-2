@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { nanoid } from 'nanoid';
 
-
 export const AddTask = ({setTasks}) => {
 
   const [title, setTitle] = useState('');
@@ -14,7 +13,7 @@ export const AddTask = ({setTasks}) => {
       id: nanoid()
     };
 
-    setTasks(tasks => [...tasks, newTask])
+    setTasks(prevTasks => [...prevTasks, newTask])
     setTitle('')
     toast.success('New Task added!')
   };
