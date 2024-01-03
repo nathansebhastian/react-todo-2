@@ -4,6 +4,7 @@ import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin7Line } from 'react-icons/ri';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
+import { TaskInput } from './TaskInput';
 
 export const TaskList = ({ tasks, setTasks }) => {
   // States to control edit button
@@ -58,11 +59,9 @@ export const TaskList = ({ tasks, setTasks }) => {
         >
           {editTaskId === task.id ? (
             <div className='flex gap-2'>
-              <input
-                className='w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-200 rounded-xl placeholder:text-zinc-500 focus:border-zinc-700'
-                type='text'
+              <TaskInput
                 value={editTaskTitle}
-                onChange={e => setEditTaskTitle(e.target.value)}
+                onChange={event => setEditTaskTitle(event.target.value)}
               />
               <button
                 className='px-5 py-2 text-md text-white bg-green-500 border-2 border-transparent rounded-lg hover:bg-green-700'

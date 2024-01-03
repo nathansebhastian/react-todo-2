@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { nanoid } from 'nanoid';
+import { TaskInput } from './TaskInput';
 
 export const AddTask = ({setTasks}) => {
 
@@ -30,10 +31,8 @@ export const AddTask = ({setTasks}) => {
   return (
     <form>
       <div className='flex items-center w-full max-w-lg gap-2 p-5 m-auto'>
-        <input
-          type='text'
+        <TaskInput
           placeholder='start typing ...'
-          className='w-full px-5 py-2 bg-transparent border-2 outline-none border-zinc-200 rounded-xl placeholder:text-zinc-500 focus:border-zinc-700'
           value={title}
           onChange={event => setTitle(event.target.value)}
         />
