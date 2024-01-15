@@ -11,20 +11,20 @@ export const TaskList = ({ tasks, setTasks }) => {
   const [editTaskId, setEditTaskId] = useState(null);
   const [editTaskTitle, setEditTaskTitle] = useState('');
 
-  function deleteTask(taskId) {
+  const deleteTask = taskId => {
     const confirmation = confirm('Are you sure?');
     if (confirmation) {
       setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
       toast.success('Task Deleted!');
     }
-  }
+  };
 
-  function handleEditTask(taskId, taskTitle) {
+  const handleEditTask = (taskId, taskTitle) => {
     setEditTaskId(taskId);
     setEditTaskTitle(taskTitle);
-  }
+  };
 
-  function editTask(taskId) {
+  const editTask = taskId => {
     const updatedTasks = tasks.map(task => {
       if (task.id === taskId) {
         task.title = editTaskTitle;
@@ -35,9 +35,9 @@ export const TaskList = ({ tasks, setTasks }) => {
     setEditTaskId(null);
     setEditTaskTitle('');
     toast.success('Task title updated!');
-  }
+  };
 
-  function updateTaskStatus(taskId) {
+  const updateTaskStatus = taskId => {
     const updatedTasks = tasks.map(task => {
       if (task.id === taskId) {
         task.completed = !task.completed;
@@ -46,7 +46,7 @@ export const TaskList = ({ tasks, setTasks }) => {
     });
     setTasks(updatedTasks);
     toast.success('Task status updated!');
-  }
+  };
 
   return (
     <ul className='grid max-w-lg gap-2 px-5 m-auto'>
