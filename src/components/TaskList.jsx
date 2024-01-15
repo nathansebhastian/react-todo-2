@@ -64,7 +64,7 @@ export const TaskList = ({ tasks, setTasks }) => {
                 onChange={event => setEditTaskTitle(event.target.value)}
               />
               <button
-                className='px-5 py-2 text-md text-white bg-green-500 border-2 border-transparent rounded-lg hover:bg-green-700'
+                className='px-5 py-2 text-white bg-green-500 border-2 border-transparent rounded-lg hover:bg-green-700'
                 onClick={() => editTask(task.id)}
               >
                 Update
